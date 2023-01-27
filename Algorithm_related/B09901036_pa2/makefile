@@ -1,44 +1,18 @@
-# CC and CFLAGS are varilables
-CC = g++
-CFLAGS = -c
-AR = ar
-ARFLAGS = rcv
-# -c option ask g++ to compile the source files, but do not link.
-# -g option is for debugging version
-# -O2 option is for optimized version
-DBGFLAGS = -g -D_DEBUG_ON_
-OPTFLAGS = -O2
+CC=g++
+CFLAGS= 
 
-all	: bin/NTU_sort
-	@echo -n ""
+OPTFLAGS =-O3
 
-# optimized version
-bin/NTU_sort	: sort_tool_opt.o main_opt.o lib
-			$(CC) $(OPTFLAGS) sort_tool_opt.o main_opt.o -ltm_usage -Llib -o bin/NTU_sort
-main_opt.o 	   	: src/main.cpp lib/tm_usage.h
-			$(CC) $(CFLAGS) $< -Ilib -o $@
-sort_tool_opt.o	: src/sort_tool.cpp src/sort_tool.h
-			$(CC) $(CFLAGS) $(OPTFLAGS) $< -o $@
+TARGET = MPS_SOLVER.o mps
+.PHONY: all clean
 
-# DEBUG Version
-dbg : bin/NTU_sort_dbg
-	@echo -n ""
+all:
 
-bin/NTU_sort_dbg	: sort_tool_dbg.o main_dbg.o lib
-			$(CC) $(DBGFLAGS) sort_tool_dbg.o main_dbg.o -ltm_usage -Llib -o bin/NTU_sort_dbg
-main_dbg.o 	   	: src/main.cpp lib/tm_usage.h
-			$(CC) $(CFLAGS) $< -Ilib -o $@
-sort_tool_dbg.o	: src/sort_tool.cpp src/sort_tool.h
-			$(CC) $(CFLAGS) $(DBGFLAGS) $< -o $@
 
-lib: lib/libtm_usage.a
 
-lib/libtm_usage.a: tm_usage.o
-	$(AR) $(ARFLAGS) $@ $<
-tm_usage.o: lib/tm_usage.cpp lib/tm_usage.h
-	$(CC) $(CFLAGS) $<
+mps: src/mps.cpp src/mps_solver.o
+      $(CC) $(CFLAGS) $(OPTFLAGS) $(LDFLAGS) $^ -o $@
+	  @echo "done ."
+mps_solver.o :
 
-# clean all the .o and executable files
 clean:
-		rm -rf *.o lib/*.a lib/*.o bin/*
-
