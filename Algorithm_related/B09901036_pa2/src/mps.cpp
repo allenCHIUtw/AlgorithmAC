@@ -36,6 +36,10 @@ for (int i = 0; i < planesize; i++){
         MIS[i][ii]= 0 ;  MIS_state[i][ii] = NA;
     }
 }
+    for(int j=1; j<planesize; j++)
+    {
+
+    }
 
     return 0;
 }
