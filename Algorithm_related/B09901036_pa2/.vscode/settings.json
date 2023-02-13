@@ -3,6 +3,10 @@
         "iostream": "cpp",
         "vector": "cpp",
         "cstdlib": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "array": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "new": "cpp"
     }
 }
