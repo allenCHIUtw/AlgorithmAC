@@ -9,6 +9,7 @@
 #define _SORT_TOOL_H
 
 #include<vector>
+#include<ctime>
 using namespace std;
 
 class SortTool {
@@ -21,15 +22,15 @@ class SortTool {
     private:
         void        QuickSortSubVector(vector<int>&, int, int); // quick sort subvector
         int         Partition(vector<int>&, int, int); // partition the subvector
-        int         RandomPartition(vector<int>&, int, int);
+        int         Partition_rand(vector<int>& ,int,int); // randomized parition++
         void        MergeSortSubVector(vector<int>&, int, int); // merge sort subvector
         void        Merge(vector<int>&, int, int, int, int); // merge two sorted subvector
         void        MaxHeapify(vector<int>&, int); // make tree with given root be a max-heap 
                                                     //if both right and left sub-tree are max-heap
         void        BuildMaxHeap(vector<int>&); // make data become a max-heap
         int         heapSize; // heap size used in heap sort
-        void        swap(int,int);       // for swap
-
+        void         swap(int & ,int &);
+        
 };
 
 #endif
