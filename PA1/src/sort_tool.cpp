@@ -16,17 +16,18 @@ void SortTool::InsertionSort(vector<int>& data) {
     // Function : Insertion sort
     // TODO : Please complete insertion sort code here
     //cout<<data.size()<<endl;
-    for(int i=0; i<data.size(); i++)
+    int i ,j ,temp;
+    for(i=0; i<data.size(); i++)
     {
-      int temp_i=i;
-      while(temp_i>0)
+       temp=data[i];
+      j=i-1;
+      while(j>=0 && data[j]>temp)
       {
         
-        if(data[temp_i]<data[temp_i-1])
-        swap(data[temp_i],data[temp_i-1]);
-        temp_i--;
-        
+        data[j+1]=data[j];
+        j--;
       }
+      data[j+1]=temp;
     }
 }//FINISHED okokok
 
