@@ -16,20 +16,18 @@ void SortTool::InsertionSort(vector<int>& data) {
     // Function : Insertion sort
     // TODO : Please complete insertion sort code here
     //cout<<data.size()<<endl;
-    int i ,j ,temp;
-    for(i=0; i<data.size(); i++)
+    int i =1;int len=data.size();
+    while (i<len)
     {
-       temp=data[i];
-      j=i-1;
-      while(j>=0 && data[j]>temp)
-      {
-        
-        data[j+1]=data[j];
-        j--;
-      }
-      data[j+1]=temp;
+	 int j=i;
+	 while(j>0 && data[j-1]>data[j])
+		{
+		 swap(data[j],data[j-1]);
+		 j=j-1;
+		}
+	i=i+1;
     }
-}//FINISHED okokok
+}
 
 // Quick sort method
 void SortTool::QuickSort(vector<int>& data){

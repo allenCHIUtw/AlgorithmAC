@@ -29,7 +29,7 @@ class SortTool {
                                                     //if both right and left sub-tree are max-heap
         void        BuildMaxHeap(vector<int>&); // make data become a max-heap
         int         heapSize; // heap size used in heap sort
-        void         swap(int & ,int &);
+        void        swap(int & ,int &);
         
 };
 
