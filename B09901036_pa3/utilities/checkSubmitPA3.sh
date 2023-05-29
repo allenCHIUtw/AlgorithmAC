@@ -2,10 +2,10 @@
 
 #############################################################################
 # File       [ checkSubmitPA3.sh ]
-# Author     [ funnymean ]
-# Modified   [ 2022/11/21 by Shiuan-Yun Ding]
+# Author     [ Shiuan-Yun Ding ]
+# Modified   [ By Yen-Yu Chen ]
 # Synopsis   [ simple test for algorithm PA3 homework format program ]
-# Date       [ Ver. 1.6 started 2020/11/21 ]
+# Date       [ 2023/05/10 ]
 #############################################################################
 
 
