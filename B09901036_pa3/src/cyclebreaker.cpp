@@ -1,6 +1,17 @@
 #include "cyclebreaker.h"
 
+cyclebreaker::cyclebreaker(char cycletype){
 
-class cyclebreaker
+}
+ 
+cyclebreaker::~cyclebreaker(){
+    
+}
 
-{};
+void cyclebreaker::DFS()
+{
+
+
+}
+
+void cyclebreaker::D_cyceleDetect
